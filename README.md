@@ -260,7 +260,7 @@ Maven自带时间戳使用${maven.build.timestamp}，但是时区是UTC。
 * [利用MAVEN打包时，如何包含更多的资源文件](https://bglmmz.iteye.com/blog/2063856)
 * [maven打包插件](https://www.cnblogs.com/selier/p/9510326.html)
 
-> 将指定目录下的文件打包到jar包中，**可以递归指定目录下文件夹
+> 将指定目录下的文件打包到jar包中，**可以递归指定目录下文件夹，可以配置targetPath不为${project.build.directory}，就不会打包到jar包中，${project.build.directory}默认是target\classes，若不设置，则会拷贝到该目录
 ```xml
 <build>
     <!-- resources设置的路径下的文件会被打包到jar包 -->
@@ -274,6 +274,7 @@ Maven自带时间戳使用${maven.build.timestamp}，但是时区是UTC。
                 <include>root_resource/*.xml</include>
             </includes>
             <!-- 将文件编译时拷贝到指定的目录 -->
+            <!-- 可以不拷贝到class路径，那样就不会打包到jar包中了 -->
             <targetPath>${project.build.directory}/lib</targetPath>
         </resource>
         <resource>
