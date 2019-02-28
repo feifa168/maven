@@ -7,6 +7,21 @@
 
 ## 创建工程
 
+## 打包时跳过测试
+```xml
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+```
+
 ## 指定编译版本
 ```xml
     <build>
