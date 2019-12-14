@@ -63,6 +63,7 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <!--<targetPath>${project.build.directory}</targetPath>-->
+                <!-- compile时，默认路径下资源文件会放到classes目录，也就会打进jar包，其他路径不会打进jar包 -->
                 <targetPath>${outdir}</targetPath>
                 <includes>
                     <include>**/*</include>
